@@ -1,1 +1,1 @@
-# mfront
+# Manageable Front-end Framework (mfront)
