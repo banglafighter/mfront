@@ -1,0 +1,21 @@
+
+* show tost globally
+* form definition
+* form validation
+* api calling
+* various input fields
+* localization
+* props definition
+* conditional UI rendering
+* UI Component Making
+
+* Input Field
+** Input Definition
+** Render Input Fields Automatically
+
+== Library & Technology
+
+* React 19 + TypeScript
+* React Router 7
+* Vite
+* Zustand -> Need to study
