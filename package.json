@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/banglafighter/mfront"
   },
+  "dependencies": {
+    "@mfront/ui": "workspace:*"
+  },
   "packageManager": "pnpm@10.28.2",
     "keywords": [
     "mweb",
