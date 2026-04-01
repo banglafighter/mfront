@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "mmcore": "workspace:*",
-    "@mfront/libs-wrap": "workspace:*",
     "@mfront/ui": "workspace:*",
     "@mfront/core": "workspace:*"
   },
