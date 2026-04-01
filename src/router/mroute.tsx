@@ -1,6 +1,6 @@
 import {LayoutComponent, PageComponent, RouteData, RoutePage} from "./mroute-data";
 import {DefaultErrorPage} from "./mroute-common";
-import {createMcReactRoute} from "@mfront/mfront-core";
+import {createMcReactRoute} from "@mfront/core";
 
 const RequiredLayoutName = {
     privateLayout: "private",

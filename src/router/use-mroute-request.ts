@@ -1,4 +1,4 @@
-import {mcRouterUseMatches, mcRouterUseParams, mcRouterUseSearchParams} from "@mfront/mfront-core";
+import {mcRouterUseMatches, mcRouterUseParams, mcRouterUseSearchParams} from "@mfront/core";
 
 export function useRouteRequest() {
     const [searchParams] = mcRouterUseSearchParams();
