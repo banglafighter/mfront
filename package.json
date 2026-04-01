@@ -16,7 +16,8 @@
   "dependencies": {
     "mmcore": "workspace:*",
     "@mfront/libs-wrap": "workspace:*",
-    "@mfront/ui": "workspace:*"
+    "@mfront/ui": "workspace:*",
+    "@mfront/core": "workspace:*"
   },
   "packageManager": "pnpm@10.28.2",
   "keywords": [
