@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "Manageable Front-end Framework - mfront",
   "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "author": {
     "name": "Bangla Fighter",
     "url": "https://banglafighter.com"
@@ -15,11 +17,12 @@
     "@mfront/ui": "workspace:*"
   },
   "packageManager": "pnpm@10.28.2",
-    "keywords": [
+  "keywords": [
     "mweb",
     "react",
     "frontend",
     "framework",
-    "router"
+    "router",
+    "mapend"
   ]
 }
