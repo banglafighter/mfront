@@ -14,6 +14,8 @@
     "url": "https://github.com/banglafighter/mfront"
   },
   "dependencies": {
+    "mmcore": "workspace:*",
+    "@mfront/libs-wrap": "workspace:*",
     "@mfront/ui": "workspace:*"
   },
   "packageManager": "pnpm@10.28.2",
