@@ -1,4 +1,4 @@
-import {lwReactCreateRoot} from "@mfront/core";
+import {lwReactCreateRoot} from "mfront-core";
 
 export function createApp(App: any, container: HTMLElement | null) {
     if (container) {

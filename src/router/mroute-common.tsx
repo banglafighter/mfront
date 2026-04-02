@@ -1,4 +1,4 @@
-import {McRouterOutlet} from "@mfront/core";
+import {McRouterOutlet} from "mfront-core";
 
 
 export function PageSlot() {

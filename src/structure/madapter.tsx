@@ -1,5 +1,5 @@
 import {UINode} from "mmcore";
-import {UIAdapterData} from "@mfront/ui";
+import {UIAdapterData} from "mfront-ui";
 
 export default abstract class MAdapter {
     abstract setCentralUI(): UINode

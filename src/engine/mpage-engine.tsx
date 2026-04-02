@@ -1,7 +1,7 @@
 import MRegistry from "../structure/mregistry";
-import {UIAdapterProvider} from "@mfront/ui";
+import {UIAdapterProvider} from "mfront-ui";
 import {MmReactSuspense} from "mmcore";
-import {McRouterProvider} from "@mfront/core";
+import {McRouterProvider} from "mfront-core";
 
 
 export default function MPageEngine({registry}: { registry: MRegistry }) {

@@ -1,5 +1,5 @@
 import {MConfig, MConfigDefault} from "../structure/mconfig";
-import {UIActionSpec} from "@mfront/ui";
+import {UIActionSpec} from "mfront-ui";
 import {mmCreateStore, MStore} from "mmcore";
 
 

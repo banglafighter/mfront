@@ -1,6 +1,6 @@
 {
   "name": "mfront",
-  "version": "0.0.2-alpha.1",
+  "version": "0.0.2-alpha.2",
   "description": "Maintainable Front End Framework - mfront",
   "license": "Apache-2.0",
   "main": "src/index.ts",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "mmcore": "workspace:*",
-    "@mfront/ui": "workspace:*",
-    "@mfront/core": "workspace:*"
+    "mfront-ui": "workspace:*",
+    "mfront-core": "workspace:*"
   },
   "packageManager": "pnpm@10.28.2",
   "exports": {
