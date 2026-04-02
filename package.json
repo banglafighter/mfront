@@ -4,7 +4,11 @@
   "description": "Maintainable Front End Framework - mfront",
   "license": "Apache-2.0",
   "main": "src/index.ts",
+  "module": "src/index.ts",
   "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+  },
   "author": {
     "name": "Bangla Fighter",
     "url": "https://banglafighter.org"
@@ -13,6 +17,10 @@
     "type": "git",
     "url": "https://github.com/banglafighter/mfront"
   },
+  "homepage": "https://github.com/banglafighter/mfront#readme",
+  "bugs": {
+    "url": "https://github.com/banglafighter/mfront/issues"
+  },
   "dependencies": {
     "mmcore": "workspace:*",
     "@mfront/ui": "workspace:*",
@@ -20,10 +28,33 @@
   },
   "packageManager": "pnpm@10.28.2",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
   },
   "keywords": [
+    "mfront",
     "mweb",
+    "maintainable",
     "react",
     "frontend",
     "framework",
