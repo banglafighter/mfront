@@ -1,6 +1,6 @@
 import {MConfig, MConfigDefault} from "../structure/mconfig";
 import {UIActionSpec} from "@mfront/ui";
-import {mmCreateStore} from "mmcore";
+import {mmCreateStore, MStore} from "mmcore";
 
 
 type ContextDefinition = {
@@ -10,13 +10,13 @@ type ContextDefinition = {
     setUiAction: (action: Partial<UIActionSpec>) => void;
 };
 
-export const useAppContext = mmCreateStore<ContextDefinition>((set) => ({
+export const useAppContext: MStore<ContextDefinition> = mmCreateStore<ContextDefinition>((set) => ({
     config: new MConfigDefault(),
-    setConfig: (newConfig: any) => set((state: any) => ({
+    setConfig: (newConfig: MConfig) => set((state: ContextDefinition) => ({
             config: {...state.config, ...newConfig}
         })
     ),
-    setUiAction: (action: Partial<UIActionSpec>) => set((state: any) => ({
+    setUiAction: (action: Partial<UIActionSpec>) => set((state: ContextDefinition) => ({
             uiAction: {...state.uiAction, ...action}
         })
     ),
