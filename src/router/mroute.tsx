@@ -51,7 +51,7 @@ export default abstract class MRoute {
 
     abstract setNotFoundPage(): PageComponent
 
-    abstract registerRoute(mRoute: MRoute): void
+    abstract registerRoute(route: MRoute): void
 
     setOtherLayout(): void {}
 

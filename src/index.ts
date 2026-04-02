@@ -13,7 +13,7 @@ import {
 import MRegistry from "./structure/mregistry";
 import { MConfig } from "./structure/mconfig";
 import MAdapter from "./structure/madapter";
-import {UINode, UIComponent} from "mmcore";
+import {UINode, UIComponent, mmReactLazy as loadPage} from "mmcore";
 
 export type {
     PageComponent,
@@ -37,4 +37,5 @@ export {
     createApp,
     MFront,
     MAdapter,
+    loadPage,
 }
