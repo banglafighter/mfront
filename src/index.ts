@@ -10,12 +10,20 @@ import {
     mmReactUseState as useState,
     mmReactUseRef as useRef
 } from "mmcore";
+import MRegistry from "./structure/mregistry";
+import { MConfig } from "./structure/mconfig";
+import MAdapter from "./structure/madapter";
+import {UINode, UIComponent} from "mmcore";
 
 export type {
     PageComponent,
     LayoutComponent,
     RoutePage,
-    RouteData
+    RouteData,
+    MRegistry,
+    MConfig,
+    UINode,
+    UIComponent
 }
 
 export {
@@ -27,5 +35,6 @@ export {
     useRef,
     useAppContext,
     createApp,
-    MFront
+    MFront,
+    MAdapter,
 }
