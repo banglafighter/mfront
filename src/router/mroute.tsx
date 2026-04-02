@@ -11,8 +11,9 @@ const RequiredLayoutName = {
 function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageComponent, notFoundPage: PageComponent) {
     let mappings: any = []
     routers.forEach((data, layoutName) => {
+        const Layout = data.layout
         let routeMap: any = {
-            element: data.layout,
+            element: <Layout/>,
             children: []
         }
         for (const page of data.pages ?? []) {
