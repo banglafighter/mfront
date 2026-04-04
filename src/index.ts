@@ -11,7 +11,7 @@ import {
     mmReactUseRef as useRef
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
-import { MConfig } from "./structure/mconfig";
+import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
 import MAdapter from "./structure/madapter";
 import {UINode, UIComponent, mmReactLazy as loadPage} from "mmcore";
 
@@ -38,4 +38,6 @@ export {
     MFront,
     MAdapter,
     loadPage,
+    envValue,
+    ENV_KEY
 }
