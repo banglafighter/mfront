@@ -2,12 +2,8 @@
   "name": "mfront",
   "version": "0.0.2-alpha.3",
   "description": "Maintainable Front End Framework - mfront",
-  "license": "Apache-2.0",
-  "main": "src/index.ts",
-  "module": "src/index.ts",
-  "types": "src/index.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsdown",
     "version:alpha": "pnpm version prerelease --preid alpha --no-git-tag-version",
     "version:beta": "pnpm version prerelease --preid beta --no-git-tag-version",
     "version:release": "pnpm version patch --no-git-tag-version",
@@ -18,6 +14,15 @@
     "release:beta": "pnpm run build && pnpm run version:beta && pnpm run publish:beta",
     "release": "pnpm run build && pnpm run version:release && pnpm run publish:release"
   },
+  "dependencies": {
+    "mmcore": "workspace:*",
+    "mfront-ui": "workspace:*",
+    "mfront-core": "workspace:*"
+  },
+  "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
   "author": {
     "name": "Bangla Fighter",
     "url": "https://banglafighter.org"
@@ -29,11 +34,6 @@
   "homepage": "https://github.com/banglafighter/mfront#readme",
   "bugs": {
     "url": "https://github.com/banglafighter/mfront/issues"
-  },
-  "dependencies": {
-    "mmcore": "workspace:*",
-    "mfront-ui": "workspace:*",
-    "mfront-core": "workspace:*"
   },
   "packageManager": "pnpm@10.28.2",
   "exports": {
@@ -50,13 +50,14 @@
   "publishConfig": {
     "access": "public",
     "main": "./dist/index.js",
-    "module": "./dist/index.js",
+    "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "exports": {
       ".": {
-        "import": "./dist/index.js",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js",
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.mjs"
       }
     }
   },
