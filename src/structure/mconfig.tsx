@@ -13,6 +13,7 @@ export function envValue(key: string, defaultValue: string) {
 export interface MConfig {
     apiBaseUrl?: string
     assetsBaseUrl?: string
+    mobileBreakpoint?: number
 }
 
 export class MConfigDefault implements MConfig {}
