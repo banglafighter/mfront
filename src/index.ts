@@ -14,6 +14,7 @@ import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
 import MAdapter from "./structure/madapter";
 import {UINode, UIComponent, mmReactLazy as loadPage} from "mmcore";
+export * from "./libsfea/mf-i18n"
 
 export type {
     PageComponent,

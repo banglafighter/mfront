@@ -17,7 +17,10 @@
   "dependencies": {
     "mmcore": "workspace:*",
     "mfront-ui": "workspace:*",
-    "mfront-core": "workspace:*"
+    "mfront-core": "workspace:*",
+    "i18next": "^26.2.0",
+    "react-i18next": "^17.0.8",
+    "i18next-browser-languagedetector": "^8.2.1"
   },
   "license": "Apache-2.0",
   "main": "src/index.ts",
