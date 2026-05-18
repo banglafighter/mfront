@@ -1,12 +1,12 @@
 {
   "name": "mfront",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.3-alpha.5",
   "description": "Maintainable Front End Framework - mfront",
   "scripts": {
     "build": "tsdown",
-    "version:alpha": "pnpm version prerelease --preid alpha --no-git-tag-version",
-    "version:beta": "pnpm version prerelease --preid beta --no-git-tag-version",
-    "version:release": "pnpm version patch --no-git-tag-version",
+    "version:alpha": "pnpm version prerelease --preid alpha --no-git-tag-version --no-git-checks",
+    "version:beta": "pnpm version prerelease --preid beta --no-git-tag-version --no-git-checks",
+    "version:release": "pnpm version patch --no-git-tag-version --no-git-checks",
     "publish:alpha": "pnpm publish --tag alpha --no-git-checks",
     "publish:beta": "pnpm publish --tag beta --no-git-checks",
     "publish:release": "pnpm publish --tag latest --no-git-checks",
@@ -15,12 +15,12 @@
     "release": "pnpm run build && pnpm run version:release && pnpm run publish:release"
   },
   "dependencies": {
-    "mmcore": "workspace:*",
-    "mfront-ui": "workspace:*",
-    "mfront-core": "workspace:*",
     "i18next": "^26.2.0",
-    "react-i18next": "^17.0.8",
-    "i18next-browser-languagedetector": "^8.2.1"
+    "i18next-browser-languagedetector": "^8.2.1",
+    "mfront-core": "workspace:*",
+    "mfront-ui": "workspace:*",
+    "mmcore": "workspace:*",
+    "react-i18next": "^17.0.8"
   },
   "license": "Apache-2.0",
   "main": "src/index.ts",
