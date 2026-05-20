@@ -9,7 +9,9 @@ export const MFront = {
     boot({viewHolder, registry}: BootProps) {
         const {setConfig, setUiAction} = useAppContext.get()
         setConfig({...registry.config})
-        setUiAction({...registry.adapter.setUIAdapter().action})
+        if (registry.adapter.setUIAdapter()) {
+            setUiAction({...registry.adapter.setUIAdapter().action})
+        }
         return createApp(<MPageEngine
             registry={registry}
         />, viewHolder)
