@@ -14,6 +14,7 @@ import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
 import MAdapter from "./structure/madapter";
 import {UINode, UIComponent, mmReactLazy as loadPage} from "mmcore";
+import { useRouteNav } from "./router/use-mroute-nav";
 export * from "./libsfea/mf-i18n"
 
 export type {
@@ -40,5 +41,6 @@ export {
     MAdapter,
     loadPage,
     envValue,
-    ENV_KEY
+    ENV_KEY,
+    useRouteNav
 }
