@@ -1,6 +1,6 @@
 {
   "name": "mfront",
-  "version": "0.0.5-alpha.17",
+  "version": "0.0.5-alpha.29",
   "description": "Maintainable Front End Framework - mfront",
   "scripts": {
     "build": "tsdown",
