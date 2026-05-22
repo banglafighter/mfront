@@ -8,7 +8,7 @@ const RequiredLayoutName = {
     defaultLayout: "default",
 }
 
-function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageComponent, notFoundPage: PageComponent) {
+function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageComponent, notFoundPage: PageComponent, basename?: string | null) {
     let mappings: any = []
     routers.forEach((data, layoutName) => {
         const Layout = data.layout
@@ -38,7 +38,11 @@ function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageC
             ]
         }
     )
-    return createMcReactRoute(mappings)
+    const options: Record<string, unknown> = {}
+    if (basename) {
+        options.basename = basename
+    }
+    return createMcReactRoute(mappings, options)
 }
 
 export default abstract class MRoute {
@@ -55,6 +59,10 @@ export default abstract class MRoute {
     abstract registerRoute(route: MRoute): void
 
     setOtherLayout(): void {}
+
+    setBaseUrl(): string | null {
+        return null
+    }
 
     setErrorPage(): PageComponent {
         return DefaultErrorPage
@@ -116,7 +124,7 @@ export default abstract class MRoute {
     getRouteMapping() {
         this.initAllLayout()
         this.registerRoute(this)
-        return getReactRouterMapping(this.pageAndLayout, this.setErrorPage(), this.setNotFoundPage())
+        return getReactRouterMapping(this.pageAndLayout, this.setErrorPage(), this.setNotFoundPage(), this.setBaseUrl())
     }
 
 }
