@@ -6,7 +6,8 @@ import {MFrontAdapterProvider} from "../provider/mfront-adapter-provider";
 
 export default function MPageEngine({registry}: { registry: MRegistry }) {
     const adapter: MFrontAdapterData = {
-        uiAdapterData: registry.adapter.setUIAdapter()
+        uiAdapterData: registry.adapter.setUIAdapter(),
+        httpClient: registry.adapter.setHTTPClient()
     }
 
     return (
