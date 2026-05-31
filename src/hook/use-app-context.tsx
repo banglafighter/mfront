@@ -8,6 +8,9 @@ type ContextDefinition = {
     setConfig: (newConfig: Partial<MConfig>) => void;
     uiAction?: UIActionSpec;
     setUiAction: (action: Partial<UIActionSpec>) => void;
+    loadingCount: number
+    startLoading: () => void
+    stopLoading: () => void
 };
 
 export const useAppContext: MStore<ContextDefinition> = mmCreateStore<ContextDefinition>((set) => ({
@@ -18,6 +21,15 @@ export const useAppContext: MStore<ContextDefinition> = mmCreateStore<ContextDef
     ),
     setUiAction: (action: Partial<UIActionSpec>) => set((state: ContextDefinition) => ({
             uiAction: {...state.uiAction, ...action}
+        })
+    ),
+    loadingCount: 0,
+    startLoading: () => set((state: ContextDefinition) => ({
+            loadingCount: state.loadingCount + 1,
+        })
+    ),
+    stopLoading: () => set((state: ContextDefinition) => ({
+            loadingCount: Math.max(0, state.loadingCount - 1),
         })
     ),
 }))
