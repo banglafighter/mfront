@@ -8,7 +8,8 @@ import {useRouteRequest} from "./router/use-mroute-request"
 import {
     mmReactUseContext as useContext,
     mmReactUseState as useState,
-    mmReactUseRef as useRef
+    mmReactUseRef as useRef,
+    MmReactFragment as UIFragment,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
@@ -44,5 +45,6 @@ export {
     envValue,
     ENV_KEY,
     useRouteNav,
-    useHTTPClient
+    useHTTPClient,
+    UIFragment
 }
