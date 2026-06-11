@@ -10,6 +10,8 @@ import {
     mmReactUseState as useState,
     mmReactUseRef as useRef,
     MmReactFragment as UIFragment,
+    mmReactForwardRef as forwardRef,
+    mmReactUseImperativeHandle as useImperativeHandle,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
@@ -18,6 +20,7 @@ import {UINode, UIComponent, mmReactLazy as loadPage} from "mmcore";
 import { useRouteNav } from "./router/use-mroute-nav";
 import { useHTTPClient } from "./hook/mfront-adapter-hook";
 export * from "./libsfea/mf-i18n"
+export * from "mmcore-ui"
 
 export type {
     PageComponent,
@@ -37,6 +40,8 @@ export {
     useContext,
     useState,
     useRef,
+    useImperativeHandle,
+    forwardRef,
     useAppContext,
     createApp,
     MFront,
