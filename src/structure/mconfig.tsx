@@ -14,6 +14,8 @@ export interface MConfig {
     apiBaseUrl?: string
     assetsBaseUrl?: string
     mobileBreakpoint?: number
+    defaultTitle?: string | undefined
 }
 
-export class MConfigDefault implements MConfig {}
+export class MConfigDefault implements MConfig {
+}
