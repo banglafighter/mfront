@@ -12,6 +12,9 @@ import {
     MmReactFragment as UIFragment,
     mmReactForwardRef as forwardRef,
     mmReactUseImperativeHandle as useImperativeHandle,
+    mmReactCloneElement as uiCloneElement,
+    mmReactCreateContext as createContext,
+    mmReactUseEffect as useEffect,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
@@ -51,5 +54,8 @@ export {
     ENV_KEY,
     useRouteNav,
     useHTTPClient,
-    UIFragment
+    UIFragment,
+    uiCloneElement,
+    createContext,
+    useEffect
 }
