@@ -24,6 +24,7 @@ import { useRouteNav } from "./router/use-mroute-nav";
 import { useHTTPClient } from "./hook/mfront-adapter-hook";
 export * from "./libsfea/mf-i18n"
 export * from "mmcore-ui"
+export * from "mmcore"
 
 export type {
     PageComponent,
