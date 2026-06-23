@@ -15,6 +15,7 @@ import {
     mmReactCloneElement as uiCloneElement,
     mmReactCreateContext as createContext,
     mmReactUseEffect as useEffect,
+    mmReactUseCallback as useCallback,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
@@ -58,5 +59,6 @@ export {
     UIFragment,
     uiCloneElement,
     createContext,
-    useEffect
+    useEffect,
+    useCallback
 }
