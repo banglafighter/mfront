@@ -23,6 +23,7 @@ import MAdapter from "./structure/madapter";
 import {UINode, UIComponent, mmReactLazy as loadPage} from "mmcore";
 import { useRouteNav } from "./router/use-mroute-nav";
 import { useHTTPClient } from "./hook/mfront-adapter-hook";
+import { MFrontConst } from "./common/mfront-const";
 export * from "./libsfea/mf-i18n"
 export * from "mmcore-ui"
 export * from "mmcore"
@@ -60,5 +61,6 @@ export {
     uiCloneElement,
     createContext,
     useEffect,
-    useCallback
+    useCallback,
+    MFrontConst
 }

@@ -1,6 +1,7 @@
 import {LayoutComponent, PageComponent, RouteData, RoutePage} from "./mroute-data";
 import {DefaultErrorPage, DefaultUnauthorizedPage} from "./mroute-common";
 import {createMcReactRoute} from "mfront-core";
+import {MFrontConst} from "../common/mfront-const";
 
 const RequiredLayoutName = {
     privateLayout: "private",
@@ -36,7 +37,7 @@ function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageC
         {
             errorElement: <ErrorPage/>,
             children: [
-                {path: "/unauthorized", element: <UnauthorizedPage/>},
+                {path: MFrontConst.unauthorizedUrl, element: <UnauthorizedPage/>},
                 {path: "*", element: <NotFoundPage/>},
             ]
         }
