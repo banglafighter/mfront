@@ -1,14 +1,15 @@
 import {LayoutComponent, PageComponent, RouteData, RoutePage} from "./mroute-data";
-import {DefaultErrorPage} from "./mroute-common";
+import {DefaultErrorPage, DefaultUnauthorizedPage} from "./mroute-common";
 import {createMcReactRoute} from "mfront-core";
 
 const RequiredLayoutName = {
     privateLayout: "private",
     publicLayout: "public",
     defaultLayout: "default",
+    authLayout: "auth",
 }
 
-function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageComponent, notFoundPage: PageComponent, basename?: string | null) {
+function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageComponent, notFoundPage: PageComponent, unauthorizedPage: PageComponent, basename?: string | null) {
     let mappings: any = []
     routers.forEach((data, layoutName) => {
         const Layout = data.layout
@@ -30,10 +31,12 @@ function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageC
 
     const ErrorPage = errorPage
     const NotFoundPage = notFoundPage
+    const UnauthorizedPage = unauthorizedPage
     mappings.push(
         {
             errorElement: <ErrorPage/>,
             children: [
+                {path: "/unauthorized", element: <UnauthorizedPage/>},
                 {path: "*", element: <NotFoundPage/>},
             ]
         }
@@ -58,6 +61,14 @@ export default abstract class MRoute {
 
     abstract registerRoute(route: MRoute): void
 
+    setUnauthorizedPage(): PageComponent {
+        return DefaultUnauthorizedPage
+    }
+
+    setAuthLayout(): LayoutComponent | null {
+        return null
+    }
+
     setOtherLayout(): void {}
 
     setBaseUrl(): string | null {
@@ -80,19 +91,26 @@ export default abstract class MRoute {
     }
 
     initAllLayout() {
-        let publicLayout: any = this.setPublicLayout()
+        const publicLayout: any = this.setPublicLayout()
         if (publicLayout) {
             this.setLayout(RequiredLayoutName.publicLayout, publicLayout)
         }
-        let privateLayout: any = this.setPrivateLayout()
+
+        const privateLayout: any = this.setPrivateLayout()
         if (privateLayout) {
             this.setLayout(RequiredLayoutName.privateLayout, privateLayout)
         }
 
-        let defaultLayout: any = this.setDefaultLayout()
+        const defaultLayout: any = this.setDefaultLayout()
         if (defaultLayout) {
             this.setLayout(RequiredLayoutName.defaultLayout, defaultLayout)
         }
+
+        const authLayout: any = this.setAuthLayout()
+        if (authLayout) {
+            this.setLayout(RequiredLayoutName.authLayout, authLayout)
+        }
+
         this.setOtherLayout()
     }
 
@@ -106,6 +124,10 @@ export default abstract class MRoute {
 
     addDefaultRoute(page: RoutePage) {
         this.addRoute(RequiredLayoutName.defaultLayout, page)
+    }
+
+    addAuthRoute(page: RoutePage) {
+        this.addRoute(RequiredLayoutName.authLayout, page)
     }
 
     addRoute(layoutName: string, page: RoutePage) {
@@ -124,7 +146,13 @@ export default abstract class MRoute {
     getRouteMapping() {
         this.initAllLayout()
         this.registerRoute(this)
-        return getReactRouterMapping(this.pageAndLayout, this.setErrorPage(), this.setNotFoundPage(), this.setBaseUrl())
+        return getReactRouterMapping(
+            this.pageAndLayout,
+            this.setErrorPage(),
+            this.setNotFoundPage(),
+            this.setUnauthorizedPage(),
+            this.setBaseUrl()
+        )
     }
 
 }

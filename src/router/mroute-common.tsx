@@ -12,3 +12,11 @@ export function DefaultErrorPage(){
         </>
     )
 }
+
+export function DefaultUnauthorizedPage(){
+    return (
+        <>
+            Unauthorized
+        </>
+    )
+}
