@@ -16,6 +16,7 @@ import {
     mmReactCreateContext as createContext,
     mmReactUseEffect as useEffect,
     mmReactUseCallback as useCallback,
+    mmReactSVGProps as SVGProps,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
@@ -36,7 +37,8 @@ export type {
     MRegistry,
     MConfig,
     UINode,
-    UIComponent
+    UIComponent,
+    SVGProps
 }
 
 export {
