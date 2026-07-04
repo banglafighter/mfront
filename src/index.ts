@@ -17,6 +17,7 @@ import {
     mmReactUseEffect as useEffect,
     mmReactUseCallback as useCallback,
     mmReactSVGProps as SVGProps,
+    mmReactUseReducer as useReducer,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
@@ -25,6 +26,7 @@ import {UINode, UIComponent, mmReactLazy as loadPage} from "mmcore";
 import { useRouteNav } from "./router/use-mroute-nav";
 import { useHTTPClient } from "./hook/mfront-adapter-hook";
 import { MFrontConst } from "./common/mfront-const";
+import { useBrowserStorage } from "./hook/use-browser-storage";
 export * from "./libsfea/mf-i18n"
 export * from "mmcore-ui"
 export * from "mmcore"
@@ -47,6 +49,7 @@ export {
     PageSlot,
     useContext,
     useState,
+    useReducer,
     useRef,
     useImperativeHandle,
     forwardRef,
@@ -64,5 +67,6 @@ export {
     createContext,
     useEffect,
     useCallback,
-    MFrontConst
+    MFrontConst,
+    useBrowserStorage
 }
