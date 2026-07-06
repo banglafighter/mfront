@@ -6,9 +6,9 @@ export type LayoutComponent<P = any> = UIComponent<P>
 
 export interface RoutePage {
     url: string
-    title?: string
     pageKey?: string
     component: PageComponent
+    handle?: unknown
 }
 
 export interface RouteData {

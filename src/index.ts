@@ -4,7 +4,7 @@ import { createApp } from "./mf/create-app";
 import MRoute from "./router/mroute"
 import {PageSlot} from "./router/mroute-common"
 import {LayoutComponent, PageComponent, RouteData, RoutePage} from "./router/mroute-data"
-import {useRouteRequest} from "./router/use-mroute-request"
+import {useRouteHandle, useRouteRequest} from "./router/use-mroute-request"
 import {
     mmReactUseContext as useContext,
     mmReactUseState as useState,
@@ -18,6 +18,7 @@ import {
     mmReactUseCallback as useCallback,
     mmReactSVGProps as SVGProps,
     mmReactUseReducer as useReducer,
+    mmReactUseMemo as useMemo,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
@@ -51,6 +52,7 @@ export {
     useState,
     useReducer,
     useRef,
+    useMemo,
     useImperativeHandle,
     forwardRef,
     useAppContext,
@@ -68,5 +70,6 @@ export {
     useEffect,
     useCallback,
     MFrontConst,
-    useBrowserStorage
+    useBrowserStorage,
+    useRouteHandle
 }

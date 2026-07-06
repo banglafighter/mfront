@@ -20,9 +20,14 @@ function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageC
         }
         for (const page of data.pages ?? []) {
             const FunctionToElement: any = page.component
+            const props: Record<string, any> = {}
+            if (page.pageKey) {
+                props["key"] = page.pageKey
+            }
             routeMap.children.push({
                 path: page.url,
-                element: <FunctionToElement/>
+                element: <FunctionToElement {...props}/>,
+                handle: page.handle,
             })
         }
         if (data.pages?.length) {
