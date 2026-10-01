@@ -28,6 +28,7 @@ import { useRouteNav } from "./router/use-mroute-nav";
 import { useHTTPClient } from "./hook/mfront-adapter-hook";
 import { MFrontConst } from "./common/mfront-const";
 import { useBrowserStorage } from "./hook/use-browser-storage";
+import {MRegistryOptions, UIPlatform } from "./data/common-props";
 export * from "./libsfea/mf-i18n"
 export * from "mmcore-ui"
 export * from "mmcore"
@@ -41,7 +42,9 @@ export type {
     MConfig,
     UINode,
     UIComponent,
-    SVGProps
+    SVGProps,
+    UIPlatform,
+    MRegistryOptions
 }
 
 export {

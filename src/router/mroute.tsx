@@ -2,6 +2,7 @@ import {LayoutComponent, PageComponent, RouteData, RoutePage} from "./mroute-dat
 import {DefaultErrorPage, DefaultUnauthorizedPage} from "./mroute-common";
 import {createMcReactRoute} from "mfront-core";
 import {MFrontConst} from "../common/mfront-const";
+import {MRegistryOptions} from "mfront";
 
 const RequiredLayoutName = {
     privateLayout: "private",
@@ -56,6 +57,11 @@ function getReactRouterMapping(routers: Map<string, RouteData>, errorPage: PageC
 
 export default abstract class MRoute {
     private pageAndLayout: Map<string, RouteData> = new Map<string, RouteData>()
+    readonly options: MRegistryOptions
+
+     constructor(options: MRegistryOptions) {
+        this.options = options
+    }
 
     abstract setPublicLayout(): LayoutComponent
 
