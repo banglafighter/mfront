@@ -5,7 +5,7 @@ export const ENV_KEY = {
 
 declare const __APP_ENV__: Record<string, string> | undefined;
 
-export function envValue(key: string, defaultValue: string): string {
+export function envValue(key: string, defaultValue: string | Record<string, any>): string | Record<string, any> {
     try {
         if (typeof __APP_ENV__ !== 'undefined' && __APP_ENV__[key] !== undefined) {
             return __APP_ENV__[key];
@@ -17,6 +17,14 @@ export function envValue(key: string, defaultValue: string): string {
         return (globalThis as any)[key];
     }
     return defaultValue;
+}
+
+export function envAppConfig(key?: string, defaultValue?: any) {
+    const appConfig: any = envValue("__APP_CONFIG__", {})
+    if (key) {
+        return appConfig[key] ? appConfig[key] : defaultValue
+    }
+    return appConfig
 }
 
 export interface MConfig {

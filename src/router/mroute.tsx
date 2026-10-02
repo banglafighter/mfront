@@ -167,4 +167,12 @@ export default abstract class MRoute {
         )
     }
 
+    isMobile() {
+        return this.options?.platform === 'mobile'
+    }
+
+    isWeb() {
+        return this.options?.platform === 'web'
+    }
+
 }

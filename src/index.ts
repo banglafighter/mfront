@@ -21,7 +21,7 @@ import {
     mmReactUseMemo as useMemo,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
-import {ENV_KEY, envValue, MConfig } from "./structure/mconfig";
+import {ENV_KEY, envAppConfig, envValue, MConfig } from "./structure/mconfig";
 import MAdapter from "./structure/madapter";
 import {UINode, UIComponent, mmReactLazy as loadPage} from "mmcore";
 import { useRouteNav } from "./router/use-mroute-nav";
@@ -64,6 +64,7 @@ export {
     MAdapter,
     loadPage,
     envValue,
+    envAppConfig,
     ENV_KEY,
     useRouteNav,
     useHTTPClient,
