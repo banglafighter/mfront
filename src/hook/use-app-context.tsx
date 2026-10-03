@@ -1,4 +1,4 @@
-import {MConfig, MConfigDefault} from "../structure/mconfig";
+import {MConfig, MConfigDefault, MStaticConfig} from "../structure/mconfig";
 import {UIActionSpec} from "mfront-ui";
 import {mmCreateStore, MStore} from "mmcore";
 
@@ -8,6 +8,8 @@ type ContextDefinition = {
     setConfig: (newConfig: Partial<MConfig>) => void;
     uiAction?: UIActionSpec;
     setUiAction: (action: Partial<UIActionSpec>) => void;
+    staticConfig?: MStaticConfig;
+    setStaticConfig: (config: Partial<MStaticConfig>) => void;
     loadingCount: number
     startLoading: () => void
     stopLoading: () => void
@@ -21,6 +23,10 @@ export const useAppContext: MStore<ContextDefinition> = mmCreateStore<ContextDef
     ),
     setUiAction: (action: Partial<UIActionSpec>) => set((state: ContextDefinition) => ({
             uiAction: {...state.uiAction, ...action}
+        })
+    ),
+    setStaticConfig: (config: Partial<MStaticConfig>) => set((state: ContextDefinition) => ({
+            staticConfig: {...state.staticConfig, ...config}
         })
     ),
     loadingCount: 0,

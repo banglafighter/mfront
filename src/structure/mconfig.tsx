@@ -5,7 +5,7 @@ export const ENV_KEY = {
 
 declare const __APP_ENV__: Record<string, string> | undefined;
 
-export function envValue(key: string, defaultValue: string | Record<string, any>): string | Record<string, any> {
+export function envValue(key: string, defaultValue: string | Record<string, any> | any): string | any {
     try {
         if (typeof __APP_ENV__ !== 'undefined' && __APP_ENV__[key] !== undefined) {
             return __APP_ENV__[key];
@@ -33,6 +33,11 @@ export interface MConfig {
     mobileBreakpoint?: number
     desktopBreakpoint?: number
     defaultTitle?: string | undefined
+}
+
+export interface MStaticConfig {
+    staticNav?: any
+    otherData?: any
 }
 
 export class MConfigDefault implements MConfig {

@@ -59,7 +59,7 @@ export default abstract class MRoute {
     private pageAndLayout: Map<string, RouteData> = new Map<string, RouteData>()
     readonly options: MRegistryOptions
 
-     constructor(options: MRegistryOptions) {
+    constructor(options: MRegistryOptions) {
         this.options = options
     }
 
@@ -168,11 +168,15 @@ export default abstract class MRoute {
     }
 
     isMobile() {
-        return this.options?.platform === 'mobile'
+        return this.options?.platform === "mobile"
     }
 
     isWeb() {
-        return this.options?.platform === 'web'
+        return this.options?.platform === "web"
+    }
+
+    getPlatform() {
+        return this.options?.platform ? this.options.platform : "web"
     }
 
 }
