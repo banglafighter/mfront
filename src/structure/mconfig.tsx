@@ -31,6 +31,7 @@ export interface MConfig {
     apiBaseUrl?: string
     assetsBaseUrl?: string
     mobileBreakpoint?: number
+    desktopBreakpoint?: number
     defaultTitle?: string | undefined
 }
 
