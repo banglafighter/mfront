@@ -19,6 +19,8 @@ import {
     mmReactSVGProps as SVGProps,
     mmReactUseReducer as useReducer,
     mmReactUseMemo as useMemo,
+    mmReactUseId as useId,
+    mmReactCSSProperties as CSSProperties,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
 import {ENV_KEY, envAppConfig, envValue, MConfig, MStaticConfig } from "./structure/mconfig";
@@ -45,7 +47,8 @@ export type {
     UIComponent,
     SVGProps,
     UIPlatform,
-    MRegistryOptions
+    MRegistryOptions,
+    CSSProperties,
 }
 
 export {
@@ -56,6 +59,7 @@ export {
     useState,
     useReducer,
     useRef,
+    useId,
     useMemo,
     useImperativeHandle,
     forwardRef,
