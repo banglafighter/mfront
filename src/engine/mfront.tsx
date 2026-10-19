@@ -6,7 +6,7 @@ import {useAppContext} from "../hook/use-app-context";
 
 export const MFront = {
 
-    boot({viewHolder, registry}: BootProps) {
+    boot({viewHolder, registry, onRootCommitted}: BootProps) {
         const {setConfig, setUiAction, setStaticConfig} = useAppContext.get()
         setConfig({...registry.config})
         if (registry.adapter.setUIAdapter()) {
@@ -16,7 +16,10 @@ export const MFront = {
             setStaticConfig({...registry.adapter.setStaticConfig()})
         }
         return createApp(<MPageEngine
-            registry={registry}
-        />, viewHolder)
+                registry={registry}
+            />,
+            viewHolder,
+            onRootCommitted
+        )
     }
 }

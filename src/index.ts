@@ -20,6 +20,8 @@ import {
     mmReactUseReducer as useReducer,
     mmReactUseMemo as useMemo,
     mmReactUseId as useId,
+    mmReactCreateElement as createElement,
+    mmReactCreateRef as createRef,
     mmReactCSSProperties as CSSProperties,
 } from "mmcore";
 import MRegistry from "./structure/mregistry";
